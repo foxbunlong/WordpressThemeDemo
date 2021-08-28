@@ -24,24 +24,36 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="container content-section text-center">
+<section id="about" class="container content-section">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
+        <?php
+        $pages = get_pages();
+        foreach ($pages as $page) {
+        ?>
 
-            <?php
-            $aboutUsPageId = url_to_postid(site_url('/about-us'));
-            $aboutUsPage = get_post($aboutUsPageId);
-            ?>
+            <div class="content-section-b">
 
-            <br /><br />
-            <h2><?php the_title($aboutUsPage->ID); ?></h2>
-            <br />
-            <p><?php the_content($aboutUsPage->ID); ?></p>
+                <div class="container">
 
-            <?php
-            ?>
+                    <div class="row">
+                        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                            <hr class="section-heading-spacer">
+                            <div class="clearfix"></div>
+                            <h2 class="section-heading"><?php echo $page->post_title ?></h2>
+                            <div class="lead"><?php echo $page->post_content ?></div>
+                        </div>
+                        <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                            <img class="img-responsive" src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($page->ID), 'thumbnail'); ?>">
+                        </div>
+                    </div>
 
-        </div>
+                </div>
+                <!-- /.container -->
+            </div>
+
+        <?php
+        }
+        ?>
     </div>
 </section>
 
