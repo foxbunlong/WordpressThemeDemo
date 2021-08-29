@@ -3,7 +3,7 @@
 
 <!-- Header -->
 <section id="home">
-    <div class="intro-header">
+    <div class="intro-header main-container">
 
         <div class="container">
 
