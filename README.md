@@ -2,6 +2,8 @@
 
 This repo is a theme custom-built. Design is provided by <a href='http://shaneweng.com/'>Shane Weng</a>
 
+<img src='screenshot.png' alt='Screenshot for landing page' >
+
 To make this theme worked, follow this step:
 1. Create new directory in theme folder (wp-content/themes)
 2. Pull source from this github repo
