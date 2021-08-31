@@ -61,9 +61,13 @@
 
     <!-- Page Content -->
     <?php
+
+    $args = array( 'post_type' => array( 'post', 'movies' ), 'posts_per_page' => 3 );
+    $the_query = new WP_Query( $args ); 
+
     $postPosition = 0;
-    while (have_posts()) {
-        the_post();
+    while ($the_query -> have_posts()) {
+        $the_query -> the_post();
 
         if ($postPosition % 2 == 0) {
     ?>
@@ -117,6 +121,7 @@
     <?php
         $postPosition++;
     }
+    wp_reset_postdata();
     ?>
 </section>
 
