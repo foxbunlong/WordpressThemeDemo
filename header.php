@@ -37,34 +37,45 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                <?php
-                if (is_home()) {
-                ?>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                <?php
-                } else {
-                ?>
-                    <li>
-                        <a class="page-scroll" href="<?php echo site_url(); ?>#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="<?php echo site_url(); ?>#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="<?php echo site_url(); ?>#contact">Contact</a>
-                    </li>
-                <?php
-                }
-                ?>
-                    
+                    <?php
+
+                    $menus = getMainMenu();
+
+                    foreach ($menus as $menu) {
+                    ?>
+                        <li>
+                            <a href="<?php echo $menu['url'] ?>"><?php echo $menu['title'] ?></a>
+                        </li>
+                    <?php
+                    }
+
+                    if (is_home()) {
+                    ?>
+                        <li>
+                            <a class="page-scroll" href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#services">Services</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Contact</a>
+                        </li>
+                    <?php
+                    } else {
+                    ?>
+                        <li>
+                            <a class="page-scroll" href="<?php echo site_url(); ?>#about">About</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="<?php echo site_url(); ?>#services">Services</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="<?php echo site_url(); ?>#contact">Contact</a>
+                        </li>
+                    <?php
+                    }
+                    ?>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
