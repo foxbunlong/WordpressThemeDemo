@@ -20,6 +20,6 @@ To test custom post type, follow these steps:
 
 To test menu set in Wordpress admin page, follow these steps:
 1. Go to wp-admin, find Appearance > Customize
-2. Click on Menu > Create new menu
+2. Click on Menu > Create new menu (Make sure the name should be same as set in function getMainMenu($current_menu = '<b>Main menu</b>')
 3. Create link for custom page or custom post type
 4. Refresh home page to see the change in menu
